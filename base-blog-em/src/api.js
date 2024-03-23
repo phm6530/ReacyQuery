@@ -17,6 +17,7 @@ export async function deletePost(postId) {
     `https://jsonplaceholder.typicode.com/posts/${postId}`,
     { method: "DELETE" }
   );
+  console.log(response);
   return response.json();
 }
 
@@ -25,5 +26,6 @@ export async function updatePost(postId) {
     `https://jsonplaceholder.typicode.com/posts/${postId}`,
     { method: "PATCH", data: { title: "REACT QUERY FOREVER!!!!" } }
   );
+  console.log(response);
   return response.json();
 }

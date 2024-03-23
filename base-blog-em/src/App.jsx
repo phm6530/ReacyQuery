@@ -1,13 +1,19 @@
 import { Posts } from "./Posts";
 import "./App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
+  const queryclient = new QueryClient();
+
   return (
-    // provide React Query client to App
-    <div className="App">
-      <h1>Blog &apos;em Ipsum</h1>
-      <Posts />
-    </div>
+    <QueryClientProvider client={queryclient}>
+      <div className="App">
+        <h1>Blog &apos;em Ipsum</h1>
+        <Posts />
+      </div>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
 
